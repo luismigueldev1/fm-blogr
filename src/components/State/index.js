@@ -3,8 +3,8 @@ import "./styles.scss";
 
 export default function State() {
   return (
-    <section class="state">
-      <div class="left">
+    <section className="state">
+      <div className="left">
         <div className="bg-circles">
           <img src="./assets/images/bg-pattern-circles.svg" alt="pattern" />
         </div>
@@ -13,7 +13,7 @@ export default function State() {
           <img src="./assets/images/illustration-phones.svg" alt="Phones" />
         </picture>
       </div>
-      <div class="right">
+      <div className="right">
         <h1>State of the Art Infrastructure</h1>
 
         <p>

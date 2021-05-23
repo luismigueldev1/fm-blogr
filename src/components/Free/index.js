@@ -3,7 +3,7 @@ import "./styles.scss";
 export default function Free() {
   return (
     <section className="free">
-      <div class="grid-spec">
+      <div className="grid-spec">
         <picture>
           <img
             src="./assets/images/illustration-laptop-mobile.svg"
@@ -11,7 +11,7 @@ export default function Free() {
           />
         </picture>
 
-        <div class="spec">
+        <div className="spec">
           <h1 className="section-title">Free, Open, simple</h1>
           <p>
             Blogr is a free and open source application backed by a large
