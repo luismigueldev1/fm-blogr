@@ -1,0 +1,53 @@
+@import "../../styles/varibles";
+.home {
+  background: linear-gradient(to bottom, $very-light-red-g, $light-red-g);
+  border-bottom-left-radius: 100px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  overflow: hidden;
+}
+
+.bg-intro {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+
+  img {
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-intro {
+    position: absolute;
+    top: -200px;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .bg-intro {
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}

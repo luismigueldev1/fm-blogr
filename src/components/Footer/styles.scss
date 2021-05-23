@@ -1,0 +1,45 @@
+@import "../../styles/varibles";
+
+footer {
+  text-align: center;
+  background-color: $very-dark-black-blue;
+  color: $white;
+  padding: 80px;
+  border-top-right-radius: 100px;
+
+  h2 {
+    padding: 40px 0 20px;
+  }
+  ul {
+    list-style: none;
+    li {
+      padding: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    margin-top: 80px;
+    text-align: left;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 10% repeat(4, 1fr) 10%;
+    font-size: 14px;
+    h2 {
+      padding-top: 0;
+    }
+    .product {
+      grid-column: 3;
+    }
+    ul {
+      li {
+        padding-left: 0;
+      }
+    }
+    picture {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+}

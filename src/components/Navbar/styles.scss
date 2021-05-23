@@ -1,0 +1,258 @@
+@import "../../styles//varibles";
+
+.navbar {
+  display: none;
+}
+
+.navbar-mobile {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+
+  button {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+//Navbar Mobile
+.nav-mobile {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+  background-color: $white;
+  font-family: "Overpass";
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease all;
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 24px;
+      font-weight: regular;
+      color: $very-dark-black-blue;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      span {
+        margin-left: 10px;
+        justify-self: center;
+      }
+
+      &:focus {
+        color: $grayish-blue;
+      }
+
+      &:focus + .dropdown-items {
+        display: flex;
+      }
+
+      .dropdown-button-image.active {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+
+  .dropdown-items {
+    margin-top: 15px;
+    background-color: $light-gray;
+    border-radius: 8px;
+    padding: 25px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    transition: 0.3s ease all;
+
+    li {
+      margin-top: 20px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+      a {
+        text-decoration: none;
+        color: $light-gray-text;
+        font-family: "Overpass";
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .divider {
+    border-top: 1.5px solid $grayish-blue;
+    margin: 20px 0;
+  }
+  .auth {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      padding: 14px 16px;
+      border: none;
+      background-color: $white;
+      color: $very-dark-black-blue;
+      border-radius: 30px;
+      font-weight: 700;
+      font-family: "Overpass";
+      font-size: 16px;
+      margin-top: 5px;
+      width: 150px;
+      &:last-child {
+        background: linear-gradient(to right, $very-light-red-g, $light-red-g);
+        border: 2px solid;
+        color: $white;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-mobile {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+  }
+
+  .navbar-items {
+    display: flex;
+
+    .logo {
+      margin-right: 30px;
+    }
+
+    .dropdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      margin-left: 30px;
+
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: regular;
+        color: $grayish-blue;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        transition: $transition-ease-in;
+        span {
+          margin-left: 5px;
+          justify-self: center;
+        }
+
+        &:focus,
+        &:hover {
+          color: $white;
+          text-decoration: underline;
+        }
+
+        &:focus + .dropdown-items {
+          display: flex;
+        }
+
+        .dropdown-button-image.active {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+    .dropdown-items {
+      background-color: $white;
+      border-radius: 8px;
+      padding: 25px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      display: none;
+      transition: 0.3s ease all;
+      position: absolute;
+      top: 40px;
+      box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
+      min-width: 180px;
+
+      li {
+        margin-top: 20px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        a {
+          text-decoration: none;
+          color: $very-dark-blue;
+          font-family: "Overpass";
+          font-size: 16px;
+
+          &:hover {
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-auth {
+    button {
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      color: $grayish-blue;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .login {
+      padding: 10px 25px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .singup {
+      padding: 10px 25px;
+      background-color: $white;
+      border-radius: 50px;
+      color: $light-red;
+      transition: $transition-ease-in;
+
+      &:hover {
+        background-color: $very-light-red;
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../styles/varibles";
+
+.free {
+  text-align: center;
+  .grid-spec {
+    picture {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+    .section-title {
+      font-size: 28px;
+      color: $very-dark-blue;
+      font-weight: bolder;
+      margin-bottom: 30px;
+    }
+
+    p {
+      padding: 0 5%;
+      font-size: 16px;
+      color: $very-dark-grayish-blue;
+      line-height: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .free {
+    text-align: left;
+    margin-top: 80px;
+
+    .grid-spec {
+      display: grid;
+      grid-template-columns: 10% 1.2fr 1fr 10%;
+      align-items: center;
+
+      picture {
+        grid-column: 1 / span 2;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+      .spec {
+        grid-column: 3;
+      }
+
+      p {
+        padding: 0 10% 0 0;
+      }
+    }
+  }
+}
