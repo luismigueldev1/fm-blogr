@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleNavbarMobile = () => {
+    setIsMenuOpen(!isMenuOpen);
     const navMobile = document.querySelector("#nav-mobile");
     navMobile.classList.toggle("active");
+  };
+
+  const handleArrowRotate = (pos) => {
+    const navMobile = document.querySelectorAll("#icon-arrow");
+    navMobile[pos].classList.toggle("active");
+  };
+
+  const handleArrowRotateDesktop = (pos) => {
+    const navMobile = document.querySelectorAll("#icon-arrow-d");
+    navMobile[pos].classList.toggle("active");
   };
 
   return (
@@ -13,7 +25,11 @@ export default function NavBar() {
       }
       <nav className="nav-mobile" id="nav-mobile">
         <div className="dropdown">
-          <button className="dropdown-button">
+          <button
+            className="dropdown-button"
+            onFocus={() => handleArrowRotate(0)}
+            onBlur={() => handleArrowRotate(0)}
+          >
             Product
             <span>
               <img
@@ -43,7 +59,11 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="dropdown">
-          <button className="dropdown-button">
+          <button
+            className="dropdown-button"
+            onFocus={() => handleArrowRotate(1)}
+            onBlur={() => handleArrowRotate(1)}
+          >
             Company
             <span>
               <img
@@ -70,7 +90,11 @@ export default function NavBar() {
           </ul>
         </div>
         <div className="dropdown">
-          <button className="dropdown-button">
+          <button
+            className="dropdown-button"
+            onFocus={() => handleArrowRotate(2)}
+            onBlur={() => handleArrowRotate(2)}
+          >
             Connect
             <span>
               <img
@@ -103,7 +127,11 @@ export default function NavBar() {
       <div className="navbar-mobile">
         <img src="./assets/images/logo.svg" alt="Blogr" />
         <button onClick={handleNavbarMobile}>
-          <img src="./assets/images/icon-hamburger.svg" alt="Menu" />
+          {!isMenuOpen ? (
+            <img src="./assets/images/icon-hamburger.svg" alt="Menu" />
+          ) : (
+            <img src="./assets/images/icon-close.svg" alt="Menu" />
+          )}
         </button>
       </div>
 
@@ -115,12 +143,16 @@ export default function NavBar() {
         <div className="navbar-items">
           <img src="./assets/images/logo.svg" alt="Blogr" className="logo" />
           <div className="dropdown">
-            <button className="dropdown-button">
+            <button
+              className="dropdown-button"
+              onFocus={() => handleArrowRotateDesktop(0)}
+              onBlur={() => handleArrowRotateDesktop(0)}
+            >
               Product
               <span>
                 <img
                   className="dropdown-button-image"
-                  id="icon-arrow"
+                  id="icon-arrow-d"
                   src="./assets/images/icon-arrow-light.svg"
                   alt="Product"
                 />
@@ -145,12 +177,16 @@ export default function NavBar() {
             </ul>
           </div>
           <div className="dropdown">
-            <button className="dropdown-button">
+            <button
+              className="dropdown-button"
+              onFocus={() => handleArrowRotateDesktop(1)}
+              onBlur={() => handleArrowRotateDesktop(1)}
+            >
               Company
               <span>
                 <img
                   className="dropdown-button-image"
-                  id="icon-arrow"
+                  id="icon-arrow-d"
                   src="./assets/images/icon-arrow-light.svg"
                   alt="Product"
                 />
@@ -172,12 +208,16 @@ export default function NavBar() {
             </ul>
           </div>
           <div className="dropdown">
-            <button className="dropdown-button">
+            <button
+              className="dropdown-button"
+              onFocus={() => handleArrowRotateDesktop(2)}
+              onBlur={() => handleArrowRotateDesktop(2)}
+            >
               Connect
               <span>
                 <img
                   className="dropdown-button-image"
-                  id="icon-arrow"
+                  id="icon-arrow-d"
                   src="./assets/images/icon-arrow-light.svg"
                   alt="Product"
                 />

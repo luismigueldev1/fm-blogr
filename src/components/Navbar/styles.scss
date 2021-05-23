@@ -45,13 +45,14 @@
       border: none;
       background-color: transparent;
       font-size: 24px;
-      font-weight: regular;
+      font-weight: bolder;
       color: $very-dark-black-blue;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 500;
+      transition: $transition-ease-in;
       span {
         margin-left: 10px;
         justify-self: center;
@@ -63,6 +64,7 @@
 
       &:focus + .dropdown-items {
         display: flex;
+        opacity: 1;
       }
 
       .dropdown-button-image.active {
@@ -82,7 +84,8 @@
     align-items: center;
     justify-content: center;
     display: none;
-    transition: 0.3s ease all;
+    opacity: 0;
+    transition: $transition-ease-in;
 
     li {
       margin-top: 20px;
@@ -139,7 +142,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 10%;
+    padding: 2.5% 10%;
   }
 
   .navbar-items {
@@ -181,10 +184,12 @@
 
         &:focus + .dropdown-items {
           display: flex;
+          opacity: 1;
         }
 
         .dropdown-button-image.active {
           transform: rotateX(180deg);
+          transition: $transition-ease-in;
         }
       }
     }
@@ -198,8 +203,8 @@
       flex-direction: column;
       align-items: flex-start;
 
-      display: none;
-      transition: 0.3s ease all;
+      opacity: 0;
+      transition: $transition-ease-in;
       position: absolute;
       top: 40px;
       box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
